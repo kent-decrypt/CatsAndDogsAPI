@@ -1,5 +1,8 @@
 # CatsAndDogsAPI 🐱🐶
-This is a project integrating both the cats and dogs api.
+This is a project integrating both the cats and dogs api. Swagger UI is also used to test the API Endpoints
+
+## Swagger UI Overview
+<img src="https://user-images.githubusercontent.com/52302432/182620783-39d9e25f-81d4-413d-a3bc-e5bd97eb0f8d.png" alt="Swagger Overview" />
 
 ## Project Requirements
 - Visual Code 2022
@@ -33,9 +36,55 @@ This is a project integrating both the cats and dogs api.
 - <a href="https://www.nuget.org/packages/Microsoft.Extensions.Options/6.0.0/">MS Options</a> [Microsoft.Extensions.Options] (v6.0.0)
 - <a href="https://www.nuget.org/packages/Newtonsoft.Json/13.0.1/">Newtonsoft.Json</a> [Newtonsoft.Json] (v.13.0.1)
 
+## Setting up the App
+There is not much that you need to do when setting up the up. Well here are the things that you need to do:
+- Register a new account in <a href="https://thecatapi.com/">The Cat API</a>
+- Register a new account as well in <a href="https://thedogapi.com/">The Dog API</a>
+- After receiving the secret API keys,
 
-## Running the App
+## Setting up and running the App
 <ol>
-  <li>Clone the project to your local machine</li>
-  <li></li>
+  <li>Clone the project to your local machine using git <code>git clone https://github.com/kent-decrypt/CatsAndDogsAPI.git</code></li>
+  <li>Register a new account in <a href="https://thecatapi.com/">The Cat API</a></li>
+  <li>Register a new account as well in <a href="https://thedogapi.com/">The Dog API</a><//li>
+  <li>Open Visual Studio 2022 and click on "Open a Project or Solution"</li>
+  <li>When a popup appears, go to the folder where you cloned the repository</li>
+  <li>Double click on the .sln file</li>
+  <li>Under the CatsAndDogs.Api project, open the appsettings.json and make sure to modify the following settings
+  <img src="https://user-images.githubusercontent.com/52302432/182614021-087c61e4-438c-4dac-825c-384af472c3a6.png" alt="AppSettings.json" />
+  </li>
+  <li>Make sure that the default project is CatsAndDogs.Api</li>
+  <li>Press F5 or the Play button to run the Project</li>
 </ol>
+
+## Installing dependencies on the project
+<b>Note</b>: If you're going to install the packages using Visual Studio's Nuget Package Manager, you can check this link as a reference. <a href="https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio">Install and manage NuGet Packages</a>
+### Install packages via Package Manager Console 👇
+<ol>
+  <li>On the Visual Studio Application, click on the View Tab</li>
+  <li>Hover on the <b>Other Windows</b> and click on <b>Package Manager Console</b></li>
+  <li>Package Manager Console will appear on the bottom screen by default and make sure that the selected Default Project is CatsAndDogs.Api
+  <img src="https://user-images.githubusercontent.com/52302432/182615078-0286924f-4031-478d-b3d7-85794fe14343.png" alt="Package Manager Console" /></li>
+  <li>You can run the following scripts below (you can copy paste it 😉):
+    <ul>
+      <li><code>Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection -ProjectName CatsAndDogs.Api -Version 11.0.0</code></li>
+      <li><code>Install-Package Microsoft.AspNet.WebApi.Core -ProjectName CatsAndDogs.Api -Version 5.2.9</code></li>
+      <li><code>Install-Package Microsoft.Extensions.Configuration.Binder -ProjectName CatsAndDogs.Api -Version 6.0.0</code></li>
+      <li><code>Install-Package Swashbuckle.AspNetCore -ProjectName CatsAndDogs.Api -Version 6.4.0</code></li>
+      <li><code>Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection -ProjectName CatsAndDogs.Business -Version 11.0.0</code></li>
+      <li><code>Install-Package coverlet.collector -ProjectName Tests.CatsAndDogs -Version 3.1.2</code></li>
+      <li><code>Install-Package FluentAssertions -ProjectName Tests.CatsAndDogs -Version 6.7.0</code></li>
+      <li><code>Install-Package Microsoft.AspNetCore.TestHost -ProjectName Tests.CatsAndDogs -Version 6.0.7</code></li>
+      <li><code>Install-Package Moq -ProjectName Tests.CatsAndDogs -Version 4.18.1</code></li>
+      <li><code>Install-Package xunit -ProjectName Tests.CatsAndDogs -Version 2.4.1</code></li>
+      <li><code>Install-Package xunit.runner.visualstudio -ProjectName Tests.CatsAndDogs -Version 2.4.3</code></li>
+      <li><code>Install-Package Microsoft.Extensions.Options -ProjectName Integration.Cats.Api -Version 6.0.0</code></li>
+      <li><code>Install-Package Newtonsoft.Json -ProjectName Integration.Cats.Api -Version 13.0.1</code></li>
+      <li><code>Install-Package Microsoft.Extensions.Options -ProjectName Integration.Dogs.Api -Version 6.0.0</code></li>
+      <li><code>Install-Package Newtonsoft.Json -ProjectName Integration.Dogs.Api -Version 13.0.1</code></li>
+    </ul>
+  </li>
+</ol>
+
+## Comments / Suggestions / Bugs
+Let me know for any questions, bugs, or any suggestions by filing an issue in this repository (Just no hate comments please 😉).
