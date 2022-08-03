@@ -32,7 +32,7 @@ namespace CatsAndDogs.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Index(string imageId, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetImage(string imageId, CancellationToken cancellationToken)
         {
             if (string.IsNullOrEmpty(imageId))
                 return BadRequest(new ErrorResponseModel { Error = "ImageId is required", Message = "Place an image id that you want to get" });

@@ -33,7 +33,7 @@ namespace CatsAndDogs.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Index(CancellationToken cancellationToken, int page = 1, int limit = 20)
+        public async Task<IActionResult> GetList(CancellationToken cancellationToken, int page = 1, int limit = 20)
         {
             if (page < 1 || limit < 1)
                 return BadRequest(new ErrorResponseModel { Error = "Invalid parameter", Message = "Page or Limit must be more than 1" });

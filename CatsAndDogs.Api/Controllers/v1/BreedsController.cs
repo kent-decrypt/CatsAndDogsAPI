@@ -11,13 +11,13 @@ namespace CatsAndDogs.Api.Controllers.v1
     [ApiController]
     public class BreedsController : BaseController
     {
-        private readonly ICatsAndDogsBreedsServices _services;
+        private readonly ICatsAndDogsBreedsService _services;
 
         /// <summary>
         /// Constructor for the Breeds Controller
         /// </summary>
         /// <param name="services"></param>
-        public BreedsController(ICatsAndDogsBreedsServices services)
+        public BreedsController(ICatsAndDogsBreedsService services)
         {
             _services = services;
         }
@@ -33,7 +33,7 @@ namespace CatsAndDogs.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Get(CancellationToken cancellationToken, int page = 1, int limit = 20)
+        public async Task<IActionResult> GetBreeds(CancellationToken cancellationToken, int page = 1, int limit = 20)
         {
             if (page < 1 || limit < 1)
                 return BadRequest(new ErrorResponseModel { Error = "Invalid parameter", Message = "Page or Limit must be more than 1" });

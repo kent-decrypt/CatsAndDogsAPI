@@ -31,7 +31,7 @@ namespace CatsAndDogs.Api.Helpers
         /// </summary>
         public static void Services(IServiceCollection services)
         {
-            services.AddScoped<ICatsAndDogsBreedsServices, CatsAndDogsBreedsServices>();
+            services.AddScoped<ICatsAndDogsBreedsService, CatsAndDogsBreedsServices>();
             services.AddScoped<ICatsAndDogsListService, CatsAndDogsListService>();
             services.AddScoped<ICatsAndDogsImageService, CatsAndDogsImageService>();
 
