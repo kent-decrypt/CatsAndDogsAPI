@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CatsAndDogs.Business\CatsAndDogs.Business.csproj" />
-    <ProjectReference Include="..\Integration.Dogs\Integration.Dogs.Api.csproj" />
   </ItemGroup>
 
 </Project>
