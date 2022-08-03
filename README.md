@@ -86,5 +86,17 @@ There is not much that you need to do when setting up the up. Well here are the 
   </li>
 </ol>
 
+## Using the Unit Test by CLI
+You can follow the steps below for running the Unit Tests
+<ol>
+  <li>Open the Developer Power Shell. View Tab > Terminal. Or you can press <code>CTRL + `</code> from your keyboard</li>
+  <li>Check if you're in the directory of the CatsAndDogs.Tests, if not, you can use the following code <code>cd CatsAndDogs.Test</code></li>
+  <li>After verifying the directory that you're in, type in <code>dotnet test Tests.CatsAndDogs.csproj</code>
+  <img src="https://user-images.githubusercontent.com/52302432/182625671-728e64c6-7431-4c3a-aef0-4738348b03d6.png" alt="Unit Testing" /></li>
+  <li>And you're done! You have executed the Unit Tests by using the CLI!
+  <img src="https://user-images.githubusercontent.com/52302432/182625853-3fa8175a-cf94-4e80-a736-aeb3d49757ed.png" alt="Unit Testing Complete" />
+</li>
+</ol>
+
 ## Comments / Suggestions / Bugs
 Let me know for any questions, bugs, or any suggestions by filing an issue in this repository (Just no hate comments please 😉).
