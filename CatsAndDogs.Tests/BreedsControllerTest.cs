@@ -106,25 +106,196 @@ namespace CatsAndDogs.Tests
             // Arrange
             int page = 1;
             int limit = 20;
-            var petList = new List<Pet>
-            {
-                new Pet { Id = "siam" }
-            };
-
-
-            service.Setup(s => s.GetImages(petList, cancellationToken, page, limit))
-                .ReturnsAsync(GetBreedsMockData.GetBreeds_1Page_20Limit_PetImageListMockData());
 
             service.Setup(s => s.SearchBreed("Siamese", cancellationToken, page, limit))
                 .ReturnsAsync(GetBreedsMockData.GetSearchBreed_1Page_20Limit_MockData());
+            service.Setup(s => s.GetImages(It.IsAny<List<Pet>>(), cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetBreeds_1Page_20Limit_PetImageList_MockData()); 
 
             var controller = new BreedsController(service.Object);
 
             // Act
-            var result = (ObjectResult)await controller.GetImageListByBreed("Siamese", cancellationToken, page, limit);
+            var result = (OkObjectResult)await controller.GetImageListByBreed("Siamese", cancellationToken, page, limit);
 
             // Assert
             result.StatusCode.Should().Be(200);
+        }
+
+        [Fact]
+        public async Task GetImageListByBreed_ShouldReturn400Status_NegativePage()
+        {
+            // Arrange
+            int page = -1;
+            int limit = 20;
+            string breed = "Siamese";
+
+            service.Setup(s => s.SearchBreed(breed, cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetSearchBreed_1Page_20Limit_MockData());
+            service.Setup(s => s.GetImages(It.IsAny<List<Pet>>(), cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetBreeds_1Page_20Limit_PetImageList_MockData());
+
+            var controller = new BreedsController(service.Object);
+
+            // Act
+            var result = (BadRequestObjectResult)await controller.GetImageListByBreed(breed, cancellationToken, page, limit);
+
+            // Assert
+            result.StatusCode.Should().Be(400);
+        }
+
+        [Fact]
+        public async Task GetImageListByBreed_ShouldReturn400Status_NegativeLimit()
+        {
+            // Arrange
+            int page = 1;
+            int limit = -20;
+            string breed = "Siamese";
+
+            service.Setup(s => s.SearchBreed(breed, cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetSearchBreed_1Page_20Limit_MockData());
+            service.Setup(s => s.GetImages(It.IsAny<List<Pet>>(), cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetBreeds_1Page_20Limit_PetImageList_MockData());
+
+            var controller = new BreedsController(service.Object);
+
+            // Act
+            var result = (BadRequestObjectResult)await controller.GetImageListByBreed(breed, cancellationToken, page, limit);
+
+            // Assert
+            result.StatusCode.Should().Be(400);
+        }
+
+        [Fact]
+        public async Task GetImageListByBreed_ShouldReturn400Status_MoreThan100Limit()
+        {
+            // Arrange
+            int page = 1;
+            int limit = 101;
+            string breed = "Siamese";
+
+            service.Setup(s => s.SearchBreed(breed, cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetSearchBreed_1Page_20Limit_MockData());
+            service.Setup(s => s.GetImages(It.IsAny<List<Pet>>(), cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetBreeds_1Page_20Limit_PetImageList_MockData());
+
+            var controller = new BreedsController(service.Object);
+
+            // Act
+            var result = (BadRequestObjectResult)await controller.GetImageListByBreed(breed, cancellationToken, page, limit);
+
+            // Assert
+            result.StatusCode.Should().Be(400);
+        }
+
+        [Fact]
+        public async Task GetImageListByBreed_ShouldReturn400Status_NoBreedProvided()
+        {
+            // Arrange
+            int page = 1;
+            int limit = 20;
+            string breed = "";
+
+            service.Setup(s => s.SearchBreed(breed, cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetSearchBreed_1Page_20Limit_MockData());
+            service.Setup(s => s.GetImages(It.IsAny<List<Pet>>(), cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetBreeds_1Page_20Limit_PetImageList_MockData());
+
+            var controller = new BreedsController(service.Object);
+
+            // Act
+            var result = (BadRequestObjectResult)await controller.GetImageListByBreed(breed, cancellationToken, page, limit);
+
+            // Assert
+            result.StatusCode.Should().Be(400);
+        }
+
+        [Fact]
+        public async Task GetImageListByBreed_ShouldReturn404Status_BreedNotFound()
+        {
+            // Arrange
+            int page = 1;
+            int limit = 20;
+            string breed = "Hamtaro";
+
+            service.Setup(s => s.SearchBreed(breed, cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetSearchBreed_1Page_20Limit_NoResult_MockData());
+            service.Setup(s => s.GetImages(It.IsAny<List<Pet>>(), cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetBreeds_1Page_20Limit_PetImageList_MockData());
+
+            var controller = new BreedsController(service.Object);
+
+            // Act
+            var result = (NotFoundResult)await controller.GetImageListByBreed(breed, cancellationToken, page, limit);
+
+            // Assert
+            result.StatusCode.Should().Be(404);
+        }
+
+
+        [Fact]
+        public async Task GetImageListByBreed_ShouldReturn204Status_NoImagesFound()
+        {
+            // Arrange
+            int page = 1;
+            int limit = 20;
+            string breed = "Siamese";
+
+            service.Setup(s => s.SearchBreed(breed, cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetSearchBreed_1Page_20Limit_MockData());
+            service.Setup(s => s.GetImages(It.IsAny<List<Pet>>(), cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetBreeds_1Page_20Limit_NoPetImage_MockData());
+
+            var controller = new BreedsController(service.Object);
+
+            // Act
+            var result = (NoContentResult)await controller.GetImageListByBreed(breed, cancellationToken, page, limit);
+
+            // Assert
+            result.StatusCode.Should().Be(204);
+        }
+
+        [Fact]
+        public async Task GetImageListByBreed_ShouldReturn500Status_ExceptionEncountered1()
+        {
+            // Arrange
+            int page = 1;
+            int limit = 20;
+            string breed = "Siamese";
+
+            service.Setup(s => s.SearchBreed(breed, cancellationToken, page, limit))
+                .ThrowsAsync(new Exception("Test Exception"));
+            service.Setup(s => s.GetImages(It.IsAny<List<Pet>>(), cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetBreeds_1Page_20Limit_NoPetImage_MockData());
+
+            var controller = new BreedsController(service.Object);
+
+            // Act
+            var result = (ObjectResult)await controller.GetImageListByBreed(breed, cancellationToken, page, limit);
+
+            // Assert
+            result.StatusCode.Should().Be(500);
+        }
+
+        [Fact]
+        public async Task GetImageListByBreed_ShouldReturn500Status_ExceptionEncountered2()
+        {
+            // Arrange
+            int page = 1;
+            int limit = 20;
+            string breed = "Siamese";
+
+            service.Setup(s => s.SearchBreed(breed, cancellationToken, page, limit))
+                .ReturnsAsync(GetBreedsMockData.GetSearchBreed_1Page_20Limit_MockData());
+            service.Setup(s => s.GetImages(It.IsAny<List<Pet>>(), cancellationToken, page, limit))
+                .ThrowsAsync(new Exception("Test Exception"));
+
+            var controller = new BreedsController(service.Object);
+
+            // Act
+            var result = (ObjectResult)await controller.GetImageListByBreed(breed, cancellationToken, page, limit);
+
+            // Assert
+            result.StatusCode.Should().Be(500);
         }
         #endregion
     }

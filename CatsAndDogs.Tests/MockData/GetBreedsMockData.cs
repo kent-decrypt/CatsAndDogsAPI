@@ -56,6 +56,7 @@ namespace CatsAndDogs.Tests.MockData
                 new Pet()
                 {
                     Id = "siam",
+                    Name = "Siamese"
                 }
             };
 
@@ -68,14 +69,46 @@ namespace CatsAndDogs.Tests.MockData
         }
 
         /// <summary>
+        /// Returns a fake result for searching a breed with no result
+        /// </summary>
+        /// <returns></returns>
+        internal static ResultSet<List<Pet>> GetSearchBreed_1Page_20Limit_NoResult_MockData()
+        {
+            return new ResultSet<List<Pet>>()
+            {
+                Page = 1,
+                Limit = 20,
+                Result = new List<Pet>()
+            };
+        }
+
+        /// <summary>
+        /// Returns a fake result of List of Pet
+        /// </summary>
+        /// <returns></returns>
+        internal static List<Pet> GetImages_Any_ListOfPet_MockData()
+        {
+            return new List<Pet>
+            {
+                new Pet(),
+                new Pet()
+            };
+        }
+
+        /// <summary>
         /// Returns a fake result image list
         /// </summary>
         /// <returns></returns>
-        internal static ResultSet<List<Image>> GetBreeds_1Page_20Limit_PetImageListMockData()
+        internal static ResultSet<List<Image>> GetBreeds_1Page_20Limit_PetImageList_MockData()
         {
             var petList = new List<Image>
             {
-                new Image() { Id = "siam" },
+                new Image() {
+                    Id = "Ttk_tdV4g",
+                    Url = "https://cdn2.thecatapi.com/images/Ttk_tdV4g.jpg",
+                    Width = 1152,
+                    Height = 768
+                }
             }; 
 
             return new ResultSet<List<Image>>
@@ -83,6 +116,20 @@ namespace CatsAndDogs.Tests.MockData
                 Page = 1,
                 Limit = 20,
                 Result = petList,
+            };
+        }
+
+        /// <summary>
+        /// Returns a fake result image list
+        /// </summary>
+        /// <returns></returns>
+        internal static ResultSet<List<Image>> GetBreeds_1Page_20Limit_NoPetImage_MockData()
+        {
+            return new ResultSet<List<Image>>
+            {
+                Page = 1,
+                Limit = 20,
+                Result = new List<Image>(),
             };
         }
     }
