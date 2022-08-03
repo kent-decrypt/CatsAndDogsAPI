@@ -91,7 +91,7 @@ namespace CatsAndDogs.Tests
             service.Setup(s => s.SearchBreed("Siamese", new CancellationToken(), page, limit))
                 .ReturnsAsync(GetBreedsMockData.GetFact1PageLimit20MockData());
             service.Setup(s => s.GetImages(petList, new CancellationToken(), page, limit))
-                .ReturnsAsync()
+                .ReturnsAsync();
             var controller = new BreedsController(service.Object);
 
             // Act
