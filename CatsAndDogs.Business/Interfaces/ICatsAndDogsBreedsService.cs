@@ -5,7 +5,7 @@ namespace CatsAndDogs.Business.Interfaces
     /// <summary>
     /// Interface for the Cats And Dogs Breeds Service
     /// </summary>
-    public interface ICatsAndDogsBreedsServices
+    public interface ICatsAndDogsBreedsService
     {
         /// <summary>
         /// Retrieves the breeds of combined number of cats and dogs

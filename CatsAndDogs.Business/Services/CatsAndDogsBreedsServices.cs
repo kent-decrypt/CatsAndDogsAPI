@@ -9,7 +9,7 @@ namespace CatsAndDogs.Business.Services
     /// <summary>
     /// Class for the Cats And Dogs Breeds Service
     /// </summary>
-    public class CatsAndDogsBreedsServices : ICatsAndDogsBreedsServices
+    public class CatsAndDogsBreedsServices : ICatsAndDogsBreedsService
     {
         private readonly ICatService _catService;
         private readonly IDogService _dogService;
