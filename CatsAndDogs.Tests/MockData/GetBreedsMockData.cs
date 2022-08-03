@@ -3,7 +3,7 @@
 namespace CatsAndDogs.Tests.MockData
 {
     /// <summary>
-    /// Mock data for the ResultSet class in the API Layer
+    /// Mock data for the BreedsController in the API Layer
     /// </summary>
     internal static class GetBreedsMockData
     {
@@ -11,7 +11,7 @@ namespace CatsAndDogs.Tests.MockData
         /// Returns a fake result for the page = 1 and limit = 20 and a result model
         /// </summary>
         /// <returns></returns>
-        internal static ResultSet<List<Pet>> GetFact1PageLimit20MockData()
+        internal static ResultSet<List<Pet>> GeBreeds_1Page_20Limit_MockData()
         {
             var list = new List<Pet>();
 
@@ -46,15 +46,39 @@ namespace CatsAndDogs.Tests.MockData
         }
 
         /// <summary>
+        /// Returns a fake result for Searching a specific Pet
+        /// </summary>
+        /// <returns></returns>
+        internal static ResultSet<List<Pet>> GetSearchBreed_1Page_20Limit_MockData()
+        {
+            var petList = new List<Pet>()
+            {
+                new Pet()
+                {
+                    Id = "siam",
+                }
+            };
+
+            return new ResultSet<List<Pet>>()
+            {
+                Page = 1,
+                Limit = 20,
+                Result = petList
+            };
+        }
+
+        /// <summary>
         /// Returns a fake result image list
         /// </summary>
         /// <returns></returns>
-        internal static ResultSet<List<Pet>> GetFact1PageLimi20PetImageListMockData()
+        internal static ResultSet<List<Image>> GetBreeds_1Page_20Limit_PetImageListMockData()
         {
-            var petList = new List<Pet>();
+            var petList = new List<Image>
+            {
+                new Image() { Id = "siam" },
+            }; 
 
-
-            return new ResultSet<List<Pet>>
+            return new ResultSet<List<Image>>
             {
                 Page = 1,
                 Limit = 20,
