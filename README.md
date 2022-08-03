@@ -12,41 +12,41 @@ This is a project integrating both the cats and dogs api. Swagger UI is also use
 
 ## Nuget Dependencies
 ### CatsAndDogs.Api (API Layer)
-- <a href="https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0/">AutoMapper</a> [AutoMapper.Extensions.Microsoft.DependencyInjection] (v11.0.0)
-- <a href="https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0/">MS WebApi.Core</a> [Microsoft.AspNet.WebApi.Core] (v5.2.9)
-- <a href="https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/6.0.0/">MS Configuration Binder</a> [Microsoft.Extensions.Configuration.Binder] (v6.0.0)
-- <a href="https://www.nuget.org/packages/Swashbuckle.AspNetCore/6.4.0/">Swashbuckle</a> [Swashbuckle.AspNetCore] (v6.4.0)
+- <a href="https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0/" target="_blank">AutoMapper</a> [AutoMapper.Extensions.Microsoft.DependencyInjection] (v11.0.0)
+- <a href="https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0/" target="_blank">MS WebApi.Core</a> [Microsoft.AspNet.WebApi.Core] (v5.2.9)
+- <a href="https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/6.0.0/" target="_blank">MS Configuration Binder</a> [Microsoft.Extensions.Configuration.Binder] (v6.0.0)
+- <a href="https://www.nuget.org/packages/Swashbuckle.AspNetCore/6.4.0/" target="_blank">Swashbuckle</a> [Swashbuckle.AspNetCore] (v6.4.0)
 
 ### CatsAndDogs.Business (Business Layer)
-- <a href="https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0/">AutoMapper</a> [AutoMapper.Extensions.Microsoft.DependencyInjection] (v11.0.0)
+- <a href="https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0/" target="_blank">AutoMapper</a> [AutoMapper.Extensions.Microsoft.DependencyInjection] (v11.0.0)
 
 ### CatsAndDogs.Tests
-- <a href="https://www.nuget.org/packages/coverlet.collector/3.1.2/">Coverlet</a> [coverlet.collector] (v3.1.2)
-- <a href="https://www.nuget.org/packages/FluentAssertions/6.7.0/">FluentAssertions</a> [FluentAssertions] (v6.7.0)
-- <a href="https://www.nuget.org/packages/Microsoft.AspNetCore.TestHost/6.0.7/">MS Core TestHost</a> [Microsoft.AspNetCore.TestHost] (v6.0.7)
-- <a href="https://www.nuget.org/packages/Moq/4.18.1/">Moq</a> [Moq] (v4.18.1)
-- <a href="https://www.nuget.org/packages/xunit/2.4.1/">XUnit</a> [xunit] (v2.4.1)
-- <a href="https://www.nuget.org/packages/xunit.runner.visualstudio/2.4.3/">XUnit Runner</a> [xunit.runner.visualstudio] (v2.4.3)
+- <a href="https://www.nuget.org/packages/coverlet.collector/3.1.2/" target="_blank">Coverlet</a> [coverlet.collector] (v3.1.2)
+- <a href="https://www.nuget.org/packages/FluentAssertions/6.7.0/" target="_blank">FluentAssertions</a> [FluentAssertions] (v6.7.0)
+- <a href="https://www.nuget.org/packages/Microsoft.AspNetCore.TestHost/6.0.7/" target="_blank">MS Core TestHost</a> [Microsoft.AspNetCore.TestHost] (v6.0.7)
+- <a href="https://www.nuget.org/packages/Moq/4.18.1/" target="_blank">Moq</a> [Moq] (v4.18.1)
+- <a href="https://www.nuget.org/packages/xunit/2.4.1/" target="_blank">XUnit</a> [xunit] (v2.4.1)
+- <a href="https://www.nuget.org/packages/xunit.runner.visualstudio/2.4.3/" target="_blank">XUnit Runner</a> [xunit.runner.visualstudio] (v2.4.3)
 
-### Integration.Cats 🐱 (<a href="https://thecatapi.com/">Meow!</a>)
-- <a href="https://www.nuget.org/packages/Microsoft.Extensions.Options/6.0.0/">MS Options</a> [Microsoft.Extensions.Options] (v6.0.0)
+### Integration.Cats 🐱 (<a href="https://thecatapi.com/" target="_blank">Meow!</a>)
+- <a href="https://www.nuget.org/packages/Microsoft.Extensions.Options/6.0.0/" target="_blank">MS Options</a> [Microsoft.Extensions.Options] (v6.0.0)
 - <a href="https://www.nuget.org/packages/Newtonsoft.Json/13.0.1/">Newtonsoft.Json</a> [Newtonsoft.Json] (v.13.0.1)
 
-### Integration.Dogs 🐶(<a href="https://thedogapi.com/">Woof!</a>)
-- <a href="https://www.nuget.org/packages/Microsoft.Extensions.Options/6.0.0/">MS Options</a> [Microsoft.Extensions.Options] (v6.0.0)
-- <a href="https://www.nuget.org/packages/Newtonsoft.Json/13.0.1/">Newtonsoft.Json</a> [Newtonsoft.Json] (v.13.0.1)
+### Integration.Dogs 🐶(<a href="https://thedogapi.com/" target="_blank">Woof!</a>)
+- <a href="https://www.nuget.org/packages/Microsoft.Extensions.Options/6.0.0/" target="_blank">MS Options</a> [Microsoft.Extensions.Options] (v6.0.0)
+- <a href="https://www.nuget.org/packages/Newtonsoft.Json/13.0.1/" target="_blank">Newtonsoft.Json</a> [Newtonsoft.Json] (v.13.0.1)
 
 ## Setting up the App
 There is not much that you need to do when setting up the up. Well here are the things that you need to do:
-- Register a new account in <a href="https://thecatapi.com/">The Cat API</a>
-- Register a new account as well in <a href="https://thedogapi.com/">The Dog API</a>
+- Register a new account in <a href="https://thecatapi.com/" target="_blank">The Cat API</a>
+- Register a new account as well in <a href="https://thedogapi.com/" target="_blank">The Dog API</a>
 - After receiving the secret API keys,
 
 ## Setting up and running the App
 <ol>
   <li>Clone the project to your local machine using git <code>git clone https://github.com/kent-decrypt/CatsAndDogsAPI.git</code></li>
-  <li>Register a new account in <a href="https://thecatapi.com/">The Cat API</a></li>
-  <li>Register a new account as well in <a href="https://thedogapi.com/">The Dog API</a><//li>
+  <li>Register a new account in <a href="https://thecatapi.com/signup" target="_blank">The Cat API</a></li>
+  <li>Register a new account as well in <a href="https://thedogapi.com/signup" target="_blank">The Dog API</a><//li>
   <li>Open Visual Studio 2022 and click on "Open a Project or Solution"</li>
   <li>When a popup appears, go to the folder where you cloned the repository</li>
   <li>Double click on the .sln file</li>
@@ -58,7 +58,7 @@ There is not much that you need to do when setting up the up. Well here are the 
 </ol>
 
 ## Installing dependencies on the project
-<b>Note</b>: If you're going to install the packages using Visual Studio's Nuget Package Manager, you can check this link as a reference. <a href="https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio">Install and manage NuGet Packages</a>
+<b>Note</b>: If you're going to install the packages using Visual Studio's Nuget Package Manager, you can check this link as a reference. <a href="https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio" target="_blank">Install and manage NuGet Packages</a>
 ### Install packages via Package Manager Console 👇
 <ol>
   <li>On the Visual Studio Application, click on the View Tab</li>
